@@ -1,253 +1,297 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atendimento On-line</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <meta charset="utf-8">
+    <title>Atendimento</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
-
+<a href="https://wa.link/6dhsal" class="bt-whatsApp" target="_blank" style="left:25px; position:fixed;width:60px;height:60px;bottom:40px;z-index:100;">
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMjYxOSA1MDYgMTIwIDEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzI3ZDA0NTsKICAgICAgfQoKICAgICAgLmNscy0yLCAuY2xzLTUgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgc3Ryb2tlOiAjZmZmOwogICAgICAgIHN0cm9rZS13aWR0aDogNXB4OwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgc3Ryb2tlOiBub25lOwogICAgICB9CiAgICA8L3N0eWxlPjwvZGVmcz48ZyBkYXRhLW5hbWU9Ikdyb3VwIDM2IiBpZD0iR3JvdXBfMzYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzMDAgNzMpIj48Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjYwIiBjeT0iNjAiIGRhdGEtbmFtZT0iRWxsaXBzZSAxOCIgaWQ9IkVsbGlwc2VfMTgiIHI9IjYwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTkgNDMzKSIvPjxnIGRhdGEtbmFtZT0iR3JvdXAgMzUiIGlkPSJHcm91cF8zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU0IDM4NikiPjxnIGRhdGEtbmFtZT0iR3JvdXAgMzQiIGlkPSJHcm91cF8zNCI+PGcgY2xhc3M9ImNscy0yIiBkYXRhLW5hbWU9IkVsbGlwc2UgMTkiIGlkPSJFbGxpcHNlXzE5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NCA3NSkiPjxjaXJjbGUgY2xhc3M9ImNscy00IiBjeD0iMzEuNSIgY3k9IjMxLjUiIHI9IjMxLjUiLz48Y2lyY2xlIGNsYXNzPSJjbHMtNSIgY3g9IjMxLjUiIGN5PSIzMS41IiByPSIyOSIvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNDI0LDE5MWwtNC42LDE2LjMsMTYuOS00LjcuOS01LjItMTEsMy41LDIuOS0xMC41WiIgZGF0YS1uYW1lPSJQYXRoIDEyNiIgaWQ9IlBhdGhfMTI2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTMyNSAtNjgpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTI2Niw5MGMwLS4xLDMuNS0xMS43LDMuNS0xMS43bDguNCw3LjlaIiBkYXRhLW5hbWU9IlBhdGggMTI3IiBpZD0iUGF0aF8xMjciIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTY1IDQzKSIvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNDM5LjMsMTYwLjZhOS40LDkuNCwwLDAsMC0zLjksNi4xYy0uNSwzLjksMS45LDcuOSwxLjksNy45YTUwLjg3Niw1MC44NzYsMCwwLDAsOC42LDkuOCwzMC4xODEsMzAuMTgxLDAsMCwwLDkuNiw1LjEsMTEuMzc4LDExLjM3OCwwLDAsMCw2LjQuNiw5LjE2Nyw5LjE2NywwLDAsMCw0LjgtMy4yLDkuODUxLDkuODUxLDAsMCwwLC42LTIuMiw1Ljg2OCw1Ljg2OCwwLDAsMCwwLTJjLS4xLS43LTcuMy00LTgtMy44cy0xLjMsMS41LTIuMSwyLjYtMS4xLDEuNi0xLjksMS42LTQuMy0xLjQtNy42LTQuNGExNS44NzUsMTUuODc1LDAsMCwxLTQuMy02cy42LS43LDEuNC0xLjhhNS42NjQsNS42NjQsMCwwLDAsMS4zLTIuNGMwLS41LTIuOC03LjYtMy41LTcuOUExMS44NTIsMTEuODUyLDAsMCwwLDE0MzkuMywxNjAuNloiIGRhdGEtbmFtZT0iUGF0aCAxMjgiIGlkPSJQYXRoXzEyOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEzMjYuMzMyIC02OC40NjcpIi8+PC9nPjwvZz48L3N2Zz4=" alt="" width="60px">
+</a>
+<span id="alertWapp" style="left:30px; visibility: hidden; position:fixed;	width:17px;	height:17px;bottom:90px; background:red;z-index:101; font-size:11px;color:#fff;text-align:center;border-radius: 50px; font-weight:bold;line-height: normal; "> 1 </span>
+<div id="msg1" style="left: 90px; visibility: visible; background: #1EBC59; color: #fff; position: fixed; width: 200px; bottom: 52px; text-align: center; font-size: 13px; line-height: 31px; height: 32px; border-radius: 100px; z-index: 100; ">Em que posso ajudar?</div>
+<script type="text/javascript">function showIt2() {document.getElementById("msg1").style.visibility = "visible";}    setTimeout("showIt2()", 5000); function hiddenIt() {document.getElementById("msg1").style.visibility = "hidden";}setTimeout("hiddenIt()", 15000); function showIt3() {document.getElementById("msg1").style.visibility = "visible";} setTimeout("showIt3()", 25000);  msg1.onclick = function() {document.getElementById('msg1').style.visibility = "hidden"; };function alertW() { document.getElementById("alertWapp").style.visibility = "visible";	} setTimeout("alertW()", 15000); </script>
+<!-- END Widget WhastApp -->
 <body>
-    <header>
-        <div class="logo">
-            <a href="#" class="">
-                Atendimento
-            </a>
-        </div>
 
-        <div class="categorias">
-            <ul>
-                <li>
-                    <a href="a#">Home</a>
-                </li>
-                <li>
-                    <a href="a#">Para Você</a>
-                </li>
-                <li>
-                    <a href="a#">Suporte</a>
-                </li>
-                <li>
-                    <a href="a#">Financiamento</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="cliente">
-            <a href="#">
-                Àrea do Cliente
-            </a>
-        </div>
-    </header>
-
-    <section class="container-2">
-        <div class="banner">
-            <div class="desc-banner">
-                <h2>Atendimento <span class="cor_azul">On-line</span></h2>
-                <p>Seja para curtir com a família ou trabalhar, aqui você financia sua moto, carro ou caminhão com quem
-                    entende do assunto.</p>
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
+                    <h5 class="text-primary m-0"><i class=""></i>Atendimento</h5>
+                    <i class="fa fa-angle-right text-primary"></i>
+                </a>
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
+                    <div class="navbar-nav w-100">
+                    </div>
+                </nav>
             </div>
-        </div>
-
-        <div class="cards">
-            <div class="suporte">
-                <div class="bloco">
-                    <a href="">
-                        <i class="ph ph-files"></i>
-                        Emitir 2ª via de boletos
-                        <i class="ph ph-arrow-right"></i>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0"><span class="text-primary"></span>Atendimento</h1>
                     </a>
-                </div>
-                <div class="bloco">
-                    <a href="">
-                        <i class="ph ph-money"></i>
-                        Antecipação
-                        <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="bloco">
-                    <a href="">
-                        <i class="ph ph-headset"></i>
-                        Liquidação Antecipada
-                        <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="bloco">
-                    <a href="">
-                        <i class="ph ph-piggy-bank"></i>
-                        Atendimento On-line
-                        <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav py-0">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+							<a href="quem-somos.html" class="nav-item nav-link">Quem somos</a>
+                            <a href="https://wa.link/6dhsal" class="nav-item nav-link">Atualização Boleto</a>
+                            <a href="https://wa.link/6dhsal" class="nav-item nav-link">Finalização Contrato</a>
+                        </div>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="https://wa.link/6dhsal">Atendimento Online</a>
+                    </div>
+                </nav>
             </div>
         </div>
+    </div>
+    <!-- Navbar End -->
 
 
-    </section>
-
-    <section class="container-3">
-        <section class="conteudo-2">
-            <div class="conteudo-2-desc">
-                <h2>Facilidades <br>
-                    para seu dia a dia</h2>
-
-                <div class="cards-conteudo-2">
-                    <div class="bloco-conteudo-2">
-                        <i class="ph ph-barcode"></i>
-                        <h3>Segunda via de Boleto</h3>
-                        <br>
-                        <a href="https://wa.link/n1w1na" class="saibamais">Saiba mais -></a>
-                    </div>
-                    <div class="bloco-conteudo-2">
-                        <i class="ph ph-currency-circle-dollar"></i>
-                        <h3>Antecipação de Parcelas</h3>
-                        <br>
-                        <a href="https://wa.link/sfylg0" class="saibamais">Saiba mais -></a>
-                    </div>
-                    <div class="bloco-conteudo-2">
-                        <i class="ph ph-calendar-check"></i>
-                        <h3>Quitar Contrato</h3>
-                        <br>
-                        <a href="https://wa.link/n1w1na" class="saibamais">Saiba mais -></a>
-                    </div>
-                    <div class="bloco-conteudo-2">
-                        <i class="ph ph-phone-incoming"></i>
-                        <h3>Atendimento On-line</h3>
-                        <br>
-                        <a href="https://wa.link/n1w1na" class="saibamais">Saiba mais -></a>
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#header-carousel" data-slide-to="1"></li>
+                <li data-target="#header-carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="min-height: 300px;">
+                    <img class="position-relative w-100" src="img/carousel-1a.jpg" style="min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-md-3">Solicite Agora</5>
+                            <h1 class="display-3 text-white mb-md-4">Atualização Boleto</h1>
+                            <a href="https://wa.link/6dhsal" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Solicitar Agora</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </section>
-
-    <section class="container-4">
-        <div class="conteudo-container-4">
-            <h2>Temos a melhor solução <br> para sua próxima conquista</h2>
-
-            <div class="cards-container-4">
-                <div class="bloco-con-4">
-                    <img src="img/Mask group.webp" alt="">
-                    <div class="desc-card-com-4">
-                        <h3>Financiamento de veículos
-                        </h3>
-                        <p>Aqui é você quem escolhe o veículo que quer financiar e define o melhor valor de entrada e
-                            quantidade de parcelas a pagar.
-                        </p>
-                        <br>
-                        <br>
-                        <a href="#" class="button-card">
-                            Quitar Parcela do veículo
-                        </a>
+                <div class="carousel-item" style="min-height: 300px;">
+                    <img class="position-relative w-100" src="img/carousel-2a.jpg" style="min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-md-3">Solicite Agora</h5>
+                            <h1 class="display-3 text-white mb-md-4">Atendimento Online</h1>
+                            <a href="https://wa.link/6dhsal" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Solicitar Agora</a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="bloco-con-4">
-                    <img src="img/Mask group (2).webp" alt="">
-                    <div class="desc-card-com-4">
-                        <h3>Financiamento de veículos
-                        </h3>
-                        <p>Dinheiro para reformar a casa, organizar as contas ou resolver imprevistos. O BV tem o
-                            empréstimo pessoal certo para você.
-                        </p>
-                        <br>
-                        <br>
-                        <a href="#" class="button-card">
-                            Entrar em Contato
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bloco-con-4">
-                    <img src="img/Mask group (3).webp" alt="">
-                    <div class="desc-card-com-4">
-                        <h3>Financiamento de veículos
-                        </h3>
-                        <p>Com a Conta BV, você recebe, paga e controla o seu dinheiro pelo seu celular de onde estiver.
-                        </p>
-                        <br>
-                        <br>
-                        <a href="#" class="button-card">
-                            Emitir 2 via de Boleto
-                        </a>
+                <div class="carousel-item" style="min-height: 300px;">
+                    <img class="position-relative w-100" src="img/carousel-3a.jpg" style="min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-md-3">Solicite Agora</h5>
+                            <h1 class="display-3 text-white mb-md-4">Finalização de Contrato</h1>
+                            <a href="https://wa.link/6dhsal" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Solicitar Agora</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- Carousel End -->
 
-    <section class="container-5">
-        <div class="container-conteudo-5">
-            <h2>Você por dentro das novidades do BV!</h2>
 
-            <br><br>
-            <div class="whats-app">
-                <div class="what1 azul">
-                    <div class="desc-whats">
-                        <h3>WhatsApp (11) 3003-1616</h3>
-
-                        <p>Agora você também pode entrar em contato com a gente pelo nosso perfil oficial no WhatsApp.
-                        </p>
-
-                        <br><br>
-                        <a href="#" class="button-whats one">
-                            Conversar pelo WhatsApp
-                        </a>
-                    </div>
-                    <img src="img/whats.webp" alt="">
+    <!-- About Start -->
+    <div style="margin-top: -8rem;" class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="">
                 </div>
-
-                <div class="what1 blue">
-                    <div class="desc-whats">
-                        <h3>Perguntas Frequentes</h3>
-
-                        <p>Agora, fica mais fácil e rápido tirar suas dúvidas sobre nossos produtos e serviços.</p>
-
-                        <br><br>
-                        <a href="#" class="button-whats tue">
-                            Tirar minhas dúvidas
-                        </a>
+                <div class="col-lg-7">
+                    <div class="text-left mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Serviços</h5>
+                        <h1>Tudo o que você precisa</h1>
                     </div>
-                    <img src="img/Group 660.webp" alt="">
+                    <p>Apoiar a sua próxima conquista é o que nos faz seguir em frente. E você pode nem perceber, mas a gente sempre está por perto. Seja na hora de trocar de carro, investir no próprio negócio, na chegada do próximo filho, nos planos para a viagem, em um projeto de energia solar ou até mesmo começando um novo estudo.</p>
+					<p>Somos líderes e uma das principais marcas em soluções do Brasil. Conheça mais sobre a gente.</p>
+                    <a href="https://wa.link/6dhsal" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Atendimento On-line</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- About End -->
 
-    <footer>
-        <div class="footer-links">
-            <a href="#">Sobre</a>
-            <a href="#">Serviços</a>
-            <a href="#">Contato</a>
-            <a href="#">Política de Privacidade</a>
+
+    <!-- Category Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Nossas Soluções</h5>
+                <h1>Veja o que temos para você</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-1.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">2º Boleto</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">Atendimento Online</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-3.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">Renegociar Débitos</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-4.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">Quitar Débitos</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-5.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">Renegociar Parcelas</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-6.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">Portal do Cliente</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-7.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">Finalizar Contrato</h4>
+                            <span>Solicitar Agora</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/cat-8.jpg" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                            <h4 class="text-white font-weight-medium">SAC</h4>
+                            <span>Estamos On-line</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2025 | Todos os direitos reservados
+    </div>
+    <!-- Category Start -->
+
+    <!-- Courses Start -->
+    <!-- Courses End -->
+    <!-- Registration Start -->
+    <div class="container-fluid bg-registration py-5" style="margin: 0px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Atendimento</h5>
+                        <h1 class="text-white">Ainda precisando de ajuda?</h1>
+                    </div>
+                    <p class="text-white">Clique ao lado e fale com nosso atendimento online</p>
+                    <ul class="list-inline text-white m-0">
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        </div><a class="cat-overlay text-white text-decoration-none" href="https://wa.link/6dhsal">
+                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Fale conosco</button></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+    <!-- Registration End -->
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const suporte = document.querySelector(".suporte");
-            const prevBtn = document.querySelector(".prev");
-            const nextBtn = document.querySelector(".next");
 
-            let scrollStep = suporte.clientWidth * 0.85; // Scroll no tamanho de um bloco
+    <!-- Team Start -->
+    <!-- Team End -->
 
-            // Alinha o primeiro bloco corretamente ao carregar a página
-            suporte.scrollLeft = 0;
+    <!-- Testimonial Start -->
+    <!-- Testimonial End -->
+    <!-- Blog Start -->
+    <!-- Blog End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(26, 44, 84, .1) !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">Atendimento &copy; 2023 - Todos os direitos reservados.</a>
+			    <p><a href="politicas-de-privaciade.html" target="_blank">politicas de privaciade</a> | <a href="termos-e-condicoes.html" target="_blank">termos e condicoes</a></p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
-            nextBtn.addEventListener("click", function () {
-                suporte.scrollBy({ left: scrollStep, behavior: "smooth" });
-            });
 
-            prevBtn.addEventListener("click", function () {
-                suporte.scrollBy({ left: -scrollStep, behavior: "smooth" });
-            });
-        });
-    </script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
